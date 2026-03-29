@@ -1,5 +1,7 @@
 buat file terus ketik composer create-project itsazni/ukk di cmd
 
+nodejs, npm, git, composer
+
 masuk ke file /ukk
 
 ketik 'code .' untuk masuk ke vs code
