@@ -1,0 +1,38 @@
+buat file terus ketik composer create-project itsazni/ukk di cmd
+
+masuk ke file /ukk
+
+ketik 'code .' untuk masuk ke vs code
+
+file .env database di ubah sesuaikan dengan database yang akan dibuat
+
+buat database di phpMyAdmin lalu ketik 'php artisan migrate:fresh --seed'
+
+ketik "npm install" lalu "npm run dev"
+
+lalu run "php artisan serve"
+
+web.php dibawah admin aspirations
+
+ Route::resource('admin/categories', AdminCategoryController::class)->only(['index', 'store', 'update', 'destroy'])->names([
+        'index' => 'admin.categories.index',
+        'store' => 'admin.categories.store',
+        'update' => 'admin.categories.update',
+        'destroy' => 'admin.categories.destroy',
+    ]);
+
+studentcontroller di bagian store
+    public function store(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'nis' => ['required', 'string', 'unique:students,nis'],
+            'name' => ['required', 'string', 'max:255'],
+            'class' => ['required', 'string', 'max:255'],
+        ]);
+
+        Student::create($validated);
+
+        return redirect()->route('admin.students.index')->with('message', 'Siswa berhasil ditambahkan.');
+    }
+
+untuk frontend browse teakcn lalu piliih tema sesuai selera, kalua sudah copas code dan paste ke resource css, paste dari root sampai bawah
