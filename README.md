@@ -13,3 +13,17 @@ update php
 10. ctrl + s buat save
 11. tutup terminal terus buka lagi
 12. ketik php -v pastiin versi nya 8.5.x
+
+1. buat folder di D, misalnya "ukknasional"
+2. masuk ke folder "ukknasionanl" lewat file explorer, ketik cmd diatas
+3. ketik composer create-project itsazni/ukk
+4. ketik cd ukk
+5. ketik npm install
+6. ketik code .
+7. buat database di phpmyadmin (misalnya db_ukk)
+8. buka file .env terus update DB_DATABASE nya jadi database yang kalian buat (db_ukk)
+9. di cmd ketik php artisan migrate:fresh --seed
+10. buka folder ukknasiol (di D yang kalian buat tadi)
+11. ketik cmd lagi di atas kaya step nomor 2, lalu ketik cd ukk
+12. ketik php artisan serve
+13. di cmd satunya  (yang awal bikin, bukan cms baru) ketik npm run dev
